@@ -58,7 +58,7 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('test-repo') {
-      description: "OtterDog test repository",
+      description: "OtterDog test repository from PR",
     },
   ],
 }
