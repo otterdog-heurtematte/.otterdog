@@ -47,7 +47,7 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
     },
-    orgs.newRepo('otterdog-config') {
+    orgs.newRepo('otterdog-configs') {
       allow_forking: false,
       allow_merge_commit: true,
       allow_update_branch: false,
