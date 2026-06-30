@@ -1,5 +1,6 @@
 local orgs = import 'vendor/otterdog/examples/template/otterdog-defaults.libsonnet';
 
+
 orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
   settings+: {
     billing_email: "sebastien.heurtematte@eclipse-foundation.org",
