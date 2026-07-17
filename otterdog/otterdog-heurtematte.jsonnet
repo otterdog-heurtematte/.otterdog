@@ -1,6 +1,5 @@
 local orgs = import 'vendor/otterdog/examples/template/otterdog-defaults.libsonnet';
 
-
 orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
   settings+: {
     billing_email: "sebastien.heurtematte@eclipse-foundation.org",
@@ -59,6 +58,9 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('test-repo') {
+      description: "OtterDog test repository",
+    },
+    orgs.newRepo('test-repo2') {
       description: "OtterDog test repository",
     },
   ],
