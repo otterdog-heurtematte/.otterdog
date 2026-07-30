@@ -60,6 +60,11 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
     },
     orgs.newRepo('test-repo') {
       description: "OtterDog test repository",
+      secrets+: [
+        orgs.newRepoSecret('TEST_SECRET') {
+          value: "test",
+        },
+      ],
     },
   ],
 }
