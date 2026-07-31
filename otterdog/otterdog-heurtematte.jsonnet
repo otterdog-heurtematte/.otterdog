@@ -8,7 +8,6 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
      packages_containers_internal: false,
     packages_containers_public: false,
     web_commit_signoff_required: false,
-    deploy_keys_enabled_for_repositories: true,
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
     },
