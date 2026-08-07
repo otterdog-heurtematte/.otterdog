@@ -87,7 +87,7 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
       ],
     },
     orgs.newRepo('otterdog-configs') {
-      description: "otterdog configs",
+      description: "otterdog configs 2",
       allow_forking: false,
       allow_merge_commit: true,
       allow_update_branch: false,
