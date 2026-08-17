@@ -71,7 +71,7 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_alerts_enabled: false,
-      description: "OtterDog is a tool to manage GitHub organizations at scale using a configuration as code approach. It is actively used by the Eclipse Foundation to manage its numerous projects hosted on GitHub.",
+      description: "OtterDog is a tool to manage GitHub organizations at scale using a configuration as code approach. It is actively used by the Eclipse Foundation to manage its numerous projects hosted on GitHub. ",
       has_issues: false,
       homepage: "https://otterdog.readthedocs.org",
       secret_scanning: "disabled",
