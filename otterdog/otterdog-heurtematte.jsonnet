@@ -113,6 +113,9 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
     },
     orgs.newRepo('test-repo') {
       description: "OtterDog test repository from PR",
+      workflows+: {
+        max_cache_size_gb: 50
+      },
     },
   ],
 }
