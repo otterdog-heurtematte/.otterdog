@@ -15,6 +15,7 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
     ],
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
+      max_cache_size_gb: 50
     },
   },
   teams+: [
@@ -112,6 +113,9 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
     },
     orgs.newRepo('test-repo') {
       description: "OtterDog test repository from PR",
+      workflows+: {
+        max_cache_size_gb: 50
+      },
     },
   ],
 }
