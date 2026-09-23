@@ -114,4 +114,9 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
       description: "OtterDog test repository from PR test3",
     },
   ],
+} + {
+  # snippet added due to 'https://github.com/otterdog-heurtematte/otterdog-configs/blob/main/blueprints/add-dot-github-repo.yml'
+  _repositories+:: [
+    orgs.newRepo('.github')
+  ],
 }
