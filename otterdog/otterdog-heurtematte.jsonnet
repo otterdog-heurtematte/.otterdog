@@ -46,6 +46,7 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
   ],
   _repositories+:: [
     orgs.newRepo('.otterdog') {
+      description: ".otterdog repo description",
       allow_forking: false,
       allow_merge_commit: true,
       allow_update_branch: false,
