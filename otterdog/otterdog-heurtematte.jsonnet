@@ -111,7 +111,7 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('test-repo') {
-      description: "OtterDog test repository from PR test3",
+      description: "OtterDog test repository from PR test3 change",
     },
     orgs.newRepo('test-repo-auto-merge') {
       description: "OtterDog test repository for auto-merge check merge",
