@@ -116,5 +116,11 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
     orgs.newRepo('test-repo-auto-merge') {
       description: "OtterDog test repository for auto-merge check merge",
     },
+    orgs.newRepo('test-repo-code-scannning') {
+      description: "OtterDog test repository for code-scanning",
+      code_scanning_default_languages+: [
+        "java-kotlin"
+      ],
+    },
   ],
 }
