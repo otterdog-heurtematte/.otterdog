@@ -118,7 +118,7 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
     },
     orgs.newRepo('test-repo-code-scannning') {
       description: "OtterDog test repository for code-scanning",
-      code_scanning_default_setup_enabled: true,
+      code_scanning_default_setup_enabled: false,
       code_scanning_default_languages+: [
         "java-kotlin"
       ],
