@@ -113,6 +113,9 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
     orgs.newRepo('test-repo') {
       description: "OtterDog test repository from PR test3 change2",
     },
+    orgs.newRepo('otterdog-import-repo') {
+      description: "test import existing repo sync with otterdog",
+    },
     orgs.newRepo('test-repo-auto-merge') {
       description: "OtterDog test repository for auto-merge check merge",
     },
