@@ -112,6 +112,26 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
     },
     orgs.newRepo('test-repo') {
       description: "OtterDog test repository from PR test3 change2",
+      orgs.newRepoRuleset('main') {
+            include_refs+: [
+              "refs/heads/main/**/*"
+            ],
+            required_pull_request+: {
+              required_approving_review_count: 1,
+              requires_review_thread_resolution: true,
+            },
+            bypass_actors+: [
+                "@otterdog-heurtematte/otterdog-heurtematte-project-leads",
+            ],
+            allows_creations: true,
+            allows_force_pushes: false,
+            requires_linear_history: true,
+            required_status_checks+: {
+            status_checks+: [
+                "check-approvals",
+              ],
+            },
+          },
     },
     orgs.newRepo('otterdog-import-repo') {
       description: "test import existing repo sync with otterdog",
