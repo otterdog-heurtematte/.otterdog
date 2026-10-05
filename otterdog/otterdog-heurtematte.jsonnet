@@ -1,13 +1,13 @@
-local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
+local orgs = import "vendor/otterdog-defaults/otterdog-defaults.libsonnet";
 
-orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
+orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
   settings+: {
     members_can_change_project_visibility: false,
     packages_containers_internal: false,
     packages_containers_public: false,
     web_commit_signoff_required: false,
     custom_properties+: [
-      orgs.newCustomProperty('test') {
+      orgs.newCustomProperty("test") {
         default_value: "otterdog-heurtematte",
         description: "The Eclipse project test property.",
         required: true,
@@ -18,34 +18,34 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
     },
   },
   teams+: [
-    orgs.newTeam('otterdog-heurtematte-project-leads') {
-      members+: [
-        "heurtematte"
-      ],
-    },
-    orgs.newTeam('test-team') {
+    orgs.newTeam("otterdog-heurtematte-project-leads") {
       members+: [
         "heurtematte",
-        "sebastienheurtematte"
+      ],
+    },
+    orgs.newTeam("test-team") {
+      members+: [
+        "heurtematte",
+        "sebastienheurtematte",
       ],
     },
   ],
   secrets+: [
-    orgs.newOrgSecret('OTTER_API_TOKEN') {
+    orgs.newOrgSecret("OTTER_API_TOKEN") {
       value: "********",
     },
-    orgs.newOrgSecret('OTTER_PASSWORD') {
+    orgs.newOrgSecret("OTTER_PASSWORD") {
       value: "********",
     },
-    orgs.newOrgSecret('OTTER_TOTP_SEED') {
+    orgs.newOrgSecret("OTTER_TOTP_SEED") {
       value: "********",
     },
-    orgs.newOrgSecret('OTTER_USERNAME') {
+    orgs.newOrgSecret("OTTER_USERNAME") {
       value: "********",
     },
   ],
   _repositories+:: [
-    orgs.newRepo('.otterdog') {
+    orgs.newRepo(".otterdog") {
       allow_forking: false,
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -55,7 +55,7 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
       private: true,
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('helm-charts') {
+    orgs.newRepo("helm-charts") {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -66,7 +66,7 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
     },
-    orgs.newRepo('otterdog') {
+    orgs.newRepo("otterdog") {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -77,16 +77,16 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       secrets: [
-        orgs.newRepoSecret('GH_PREVIEW_TOKEN') {
+        orgs.newRepoSecret("GH_PREVIEW_TOKEN") {
           value: "********",
         },
       ],
       environments: [
-        orgs.newEnvironment('pull-request-preview') {
+        orgs.newEnvironment("pull-request-preview") {
         },
       ],
     },
-    orgs.newRepo('otterdog-configs') {
+    orgs.newRepo("otterdog-configs") {
       description: "otterdog configs 2",
       allow_forking: false,
       allow_merge_commit: true,
@@ -97,7 +97,7 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
       private: true,
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('otterdog-defaults') {
+    orgs.newRepo("otterdog-defaults") {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -110,40 +110,52 @@ orgs.newOrg('otterdog-heurtematte', 'otterdog-heurtematte') {
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('test-repo') {
+    orgs.newRepo("test-repo") {
       description: "OtterDog test repository from PR test3 change2",
-      orgs.newRepoRuleset('main') {
-            include_refs+: [
-              "refs/heads/main/**/*"
-            ],
-            required_pull_request+: {
-              required_approving_review_count: 1,
-              requires_review_thread_resolution: true,
-            },
-            bypass_actors+: [
-                "@otterdog-heurtematte/otterdog-heurtematte-project-leads",
-            ],
-            allows_creations: true,
-            allows_force_pushes: false,
-            requires_linear_history: true,
-            required_status_checks+: {
-            status_checks+: [
-                "check-approvals",
-              ],
-            },
+      rulesets: [
+        orgs.newRepoRuleset("main") {
+          include_refs+: [
+            "refs/heads/main/**/*",
+          ],
+          required_pull_request+: {
+            required_approving_review_count: 1,
+            requires_review_thread_resolution: true,
           },
+          bypass_actors+: [
+            "@otterdog-heurtematte/otterdog-heurtematte-project-leads"
+          ],
+          allows_creations: true,
+          allows_force_pushes: false,
+          requires_linear_history: true,
+        },        
+      ],
     },
-    orgs.newRepo('otterdog-import-repo') {
+    orgs.newRepo("otterdog-import-repo") {
       description: "test import existing repo sync with otterdog",
     },
-    orgs.newRepo('test-repo-auto-merge') {
+    orgs.newRepo("otterdog-repo-private") {
+      description: "test private repo",
+      private: true,
+      allow_forking: false,      
+    },
+    orgs.newRepo("otterdog-repo-private2") {
+      description: "test private repo",
+      private: true,
+      allow_forking: false,      
+    },
+    orgs.newRepo("otterdog-repo-private3") {
+      description: "test private repo",
+      private: true,
+      allow_forking: false,      
+    },
+    orgs.newRepo("test-repo-auto-merge") {
       description: "OtterDog test repository for auto-merge check merge",
     },
-    orgs.newRepo('test-repo-code-scannning') {
+    orgs.newRepo("test-repo-code-scannning") {
       description: "OtterDog test repository for code-scanning",
       code_scanning_default_setup_enabled: false,
       code_scanning_default_languages+: [
-        "java-kotlin"
+        "java-kotlin",
       ],
     },
   ],
