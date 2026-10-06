@@ -120,7 +120,7 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
           required_pull_request+: {
             required_approving_review_count: 1,
             requires_review_thread_resolution: true,
-            allowed_merge_methods: "squash",
+            allowed_merge_methods: ["squash"],
           },
           bypass_actors+: [
             "@otterdog-heurtematte/otterdog-heurtematte-project-leads"
