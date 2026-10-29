@@ -9,6 +9,7 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
       secret_scanning: "enabled",
       secret_scanning_push_protection: "enabled",
       private_vulnerability_reporting: "enabled",
+      code_scanning_allow_advanced: true
     },
   ],
   settings+: {
