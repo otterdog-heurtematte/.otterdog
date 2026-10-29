@@ -1,6 +1,16 @@
 local orgs = import "vendor/otterdog-defaults/otterdog-defaults.libsonnet";
 
 orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
+  code_security_configurations+: [
+    orgs.newOrgCodeSecurityConfiguration('baseline') {
+      description: "Secret scanning and Dependabot for all repositories",
+      dependabot_alerts: "enabled",
+      dependabot_security_updates: "enabled",
+      secret_scanning: "enabled",
+      secret_scanning_push_protection: "enabled",
+      private_vulnerability_reporting: "enabled",
+    },
+  ],
   settings+: {
     members_can_change_project_visibility: false,
     packages_containers_internal: false,
@@ -111,6 +121,7 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
       web_commit_signoff_required: false,
     },
     orgs.newRepo("test-repo") {
+      code_security_configuration: "baseline",
       description: "OtterDog test repository from PR test3 change2",
       rulesets: [
         orgs.newRepoRuleset("main") {
