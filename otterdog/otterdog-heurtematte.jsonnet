@@ -131,6 +131,11 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
             review_on_push: true,
           },
           requires_linear_history: true,
+          commit_message_pattern: orgs.newPattern() {
+            name: "Conventional Commits",
+            operator: "regex",
+            pattern: "^(feat|fix|docs|chore|refactor|test|ci|build|perf|revert)(\\(.+\\))?!?: ",
+          },
         },        
       ],
     },
