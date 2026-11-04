@@ -138,7 +138,9 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
             "@otterdog-heurtematte/otterdog-heurtematte-project-leads"
           ],
           allows_creations: true,
-          allows_force_pushes: false,
+          copilot_code_review: orgs.newCopilotCodeReview() {
+            review_on_push: true,
+          },
           requires_linear_history: true,
         },        
       ],
