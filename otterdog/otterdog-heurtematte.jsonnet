@@ -1,4 +1,4 @@
-local orgs = import "vendor/otterdog-defaults/otterdog-defaults.libsonnet";
+local orgs = import "vendor/otterdog-defaults/resources/otterdog-defaults.libsonnet";
 
 orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
   code_security_configurations+: [
