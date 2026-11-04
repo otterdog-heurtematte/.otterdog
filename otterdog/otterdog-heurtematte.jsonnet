@@ -146,6 +146,7 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
               "CodeQL:high_or_higher:errors",
             ],
           },
+          requires_license_compliance_scanning: true,
           required_code_quality: orgs.newCodeQuality() {
             severity: "warnings",
           },
