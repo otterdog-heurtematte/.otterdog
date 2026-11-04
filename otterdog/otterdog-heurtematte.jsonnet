@@ -136,6 +136,11 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
             operator: "regex",
             pattern: "^(feat|fix|docs|chore|refactor|test|ci|build|perf|revert)(\\(.+\\))?!?: ",
           },
+          branch_name_pattern: orgs.newPattern() {
+            name: "Branch prefix",
+            operator: "regex",
+            pattern: "^(feature|fix|release|dependabot)/",
+          },
         },        
       ],
     },
