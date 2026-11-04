@@ -141,6 +141,11 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
             operator: "regex",
             pattern: "^(feature|fix|release|dependabot)/",
           },
+          required_code_scanning: orgs.newCodeScanning() {
+            code_scanning_tools+: [
+              "CodeQL:high_or_higher:errors",
+            ],
+          },
         },        
       ],
     },
