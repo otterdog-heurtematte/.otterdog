@@ -4,12 +4,6 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
   code_security_configurations+: [
     orgs.newOrgCodeSecurityConfiguration('baseline') {
       description: "Secret scanning and Dependabot for all repositories",
-      dependabot_alerts: "enabled",
-      dependabot_security_updates: "enabled",
-      secret_scanning: "enabled",
-      secret_scanning_push_protection: "enabled",
-      private_vulnerability_reporting: "enabled",
-      code_scanning_allow_advanced: true
     },
   ],
   settings+: {
