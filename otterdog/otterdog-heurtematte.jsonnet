@@ -23,11 +23,6 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
     },
   },
   teams+: [
-    orgs.newTeam("otterdog-heurtematte-project-leads") {
-      members+: [
-        "heurtematte",
-      ],
-    },
     orgs.newTeam("test-team") {
       members+: [
         "heurtematte",
