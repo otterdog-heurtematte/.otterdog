@@ -20,7 +20,7 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
     ],
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
-      sha_pinning_required: true,
+      sha_pinning_required: false,
     },
   },
   teams+: [
@@ -165,7 +165,6 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
           required_code_coverage: orgs.newCodeCoverage() {
             minimum_coverage: 80,
             max_coverage_drop: 1,
-
           },
         },        
       ],
