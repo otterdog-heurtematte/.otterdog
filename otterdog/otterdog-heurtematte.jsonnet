@@ -113,6 +113,9 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
     orgs.newRepo("test-repo") {
       code_security_configuration: "baseline",
       description: "OtterDog test repository from PR test3 change2",
+      workflows+: {
+        sha_pinning_required: true,
+      },
       rulesets: [
         orgs.newRepoRuleset('restrict-files') {
           target: "push",
@@ -121,22 +124,6 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
           allows_force_pushes: true,
           required_pull_request: null,
           required_status_checks: null,
-          restricted_file_paths+: [
-            ".env",
-            "secrets/**",
-          ],
-          restricted_file_paths_exceptions+: [
-            "secrets/README.md",
-          ],
-          max_file_path_length: 255,
-          restricted_file_extensions+: [
-            "*.exe",
-            "*.jar",
-          ],
-          max_file_size: 10,
-          max_file_size_exceptions+: [
-            "docs/assets/**",
-          ],
         },
         orgs.newRepoRuleset("main") {
           include_refs+: [
