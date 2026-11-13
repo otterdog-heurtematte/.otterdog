@@ -20,6 +20,7 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
     ],
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
+      sha_pinning_required: true,
     },
   },
   teams+: [
