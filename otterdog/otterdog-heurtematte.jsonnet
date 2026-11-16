@@ -45,6 +45,14 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
       value: "********",
     },
   ],
+  actions_policies+: [
+    orgs.newOrgActionsPolicy('release') {
+      include_repo_names: ["~ALL"],
+      include_workflows: [".github/workflows/release.yml"],
+      allowed_actors: ["#Maintain", "@otterdog-heurtematte/test-team"],
+      allowed_events: ["workflow_dispatch"],
+    },
+  ],
   _repositories+:: [
     orgs.newRepo(".otterdog") {
       allow_forking: false,
