@@ -125,6 +125,13 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
       workflows+: {
         sha_pinning_required: true,
       },
+      actions_policies: [
+        orgs.newRepoActionsPolicy('release') {
+          include_workflows: [".github/workflows/release.yml"],
+          allowed_actors: ["#Maintain"],
+          name: "test",          
+        },
+      ],
       rulesets: [
         orgs.newRepoRuleset('restrict-files') {
           target: "push",
