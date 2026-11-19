@@ -188,7 +188,7 @@ orgs.newOrg("otterdog-heurtematte", "otterdog-heurtematte") {
       description: "test import existing repo sync with otterdog",
     },
     orgs.newRepo("otterdog-repo-private") {
-      description: "test private repo",
+      description: "test private repo change desciption",
       private: true,
       allow_forking: false,      
     },
